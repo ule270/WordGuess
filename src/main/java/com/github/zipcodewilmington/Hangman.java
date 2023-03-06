@@ -2,9 +2,9 @@ package com.github.zipcodewilmington;
 
 
 /**
- * @author xt0fer
+ * @author Uyen Le
  * @version 1.0.0
- * @date 5/27/21 11:02 AM
+ * @date 3.6.23
  */
 public class Hangman {
 }
