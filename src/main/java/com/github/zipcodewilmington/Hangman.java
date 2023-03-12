@@ -18,7 +18,8 @@ public class Hangman {
         Scanner keyboard;
         String guess;
         String chosen = "";
-        String[] currentG = new String[]{"_", "_","_","_","_"};
+        String[] currentG = new String[]{"_", "_", "_", "_", "_"};
+        boolean winner = false;
 
         System.out.println("Welcome to Hangman where the category is Takeout Foods");
 //        getting random index and chooses words from word bank
@@ -30,6 +31,7 @@ public class Hangman {
         keyboard = new Scanner(System.in);
         System.out.println("Please enter a character. You will have 5 attempts.");
         guess = keyboard.next();
+        attempts--;
 
         while (attempts <= 5 && attempts > 0) {
             for (int i = 0; i < chosen.length(); i++) {
@@ -47,17 +49,24 @@ public class Hangman {
             guess = keyboard.next();
             attempts--;
         }
-        ArrayList<String> currentList = (ArrayList<String>) Arrays.asList(currentG);
-           if (currentList.contains("_")) {
-            System.out.print("Incorrect guesses, all attempts used. Here are your guesses.");
-            for (String currentString : currentG) {
-                System.out.print(currentString);
+
+        for (String s : currentG) {
+            if (s.equals("_")) {
+                winner = false;
+                break;
+            } else {
+                winner = true;
             }
+        }
+
+        if (winner) {
+            System.out.print("Good job! You guessed correctly!\n");
         } else {
-            System.out.print("Good job! You guessed correctly!");
-            for (String currentString : currentG) {
-                System.out.print(currentString);
-            }
+            System.out.print("Incorrect guesses, all attempts used. Here are your guesses.\n");
+        }
+
+        for (String currentString : currentG) {
+            System.out.print(currentString);
         }
     }
 }
