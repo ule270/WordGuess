@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class Hangman {
     public static void main(String[] args) {
-        String[] words = {"sushi", "fries", "tacos", "chips", "pizza"};
+        String[] words = {"bacon", "fries", "tacos", "chips", "steak"};
 
         int attempts = 5;
         int lengthWord;
@@ -21,7 +21,7 @@ public class Hangman {
         String[] currentG = new String[]{"_", "_", "_", "_", "_"};
         boolean winner = false;
 
-        System.out.println("Welcome to Hangman where the category is Takeout Foods");
+        System.out.println("Welcome to Hangman where the category is Food");
 //        getting random index and chooses words from word bank
         Random rand = new Random();
         Integer chosenIndex = rand.nextInt(attempts - 1);
